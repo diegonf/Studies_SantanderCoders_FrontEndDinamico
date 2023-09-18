@@ -2,15 +2,17 @@
   DOM - Document Object Model
   Porque no HTML a tag <script> vem no final no body?
     Porque o DOM precisa carregar primeiro antes do javascript entrar para manipular o DOM
-  document
+  Document
+    ex: document.querySelector()
     Modo de acessar o DOM
     Objeto que "transforma" todo o html em um objeto para ser acessado pelo javascript
-  window
+  Window
+    ex: window.alert()
     É o pai de todo mundo
     Objeto global que pode ser acessado pelo javascript
     Contém todas as funções globais do javascript, como alert e fetch
     Não necessita utilizar window.qualquer_coisa
-    document é um objeto do window.
+    document é um objeto do window. window.document.qlqcoisa é a mesma coisa que document.qlqcoisa
   
     Métodos de seleção de elemento HTML
       document.getElementById('id').innerText
@@ -30,9 +32,9 @@
 
 // outras formas de selecionar o elemento
 // console.log(doc.querySelector('#num').innerText);
-// console.log(doc.querySelectorAll('#num')); // imprime uma lista do tipoe NodeList (similar ao Array)
+// console.log(doc.querySelectorAll('#num')); // imprime uma lista do tipo NodeList (similar ao Array)
 // console.log(doc.querySelectorAll('#num')[0].innerText);
-// console.log('num.innerText: ', num.innerText); // só pegar o nome do id e acessar como variavel. Isso só funciona como id, e não funcionariad dessa forma se tivesse hífen ou outro caracter especial no meio. Isso existe por causa do window.num (o navegador cria dentro do objeto global window os elementos HTML que contém id)
+// console.log('num.innerText: ', num.innerText); // só pegar o nome do id e acessar como variavel. Isso só funciona como id, e não funcionaria dessa forma se tivesse hífen ou outro caracter especial no meio. Isso existe por causa do window.num (o navegador cria dentro do objeto global window os elementos HTML que contém id)
 
 
 sumButton.addEventListener('click', () => {

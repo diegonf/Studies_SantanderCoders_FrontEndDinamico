@@ -64,3 +64,13 @@ body {
 .btn-clear, .btn-ans{
   flex: 1.5;
 }
+
+.orange {
+  background: orange;
+  transition: 0.5s;
+}
+
+.green {
+  background: rgb(45, 252, 45);
+  transition: 0.5s;
+}

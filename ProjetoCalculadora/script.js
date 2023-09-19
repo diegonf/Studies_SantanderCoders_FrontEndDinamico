@@ -110,6 +110,14 @@ const calculateResult = () => {
             break;
     }
     data.result = parseFloat(result.toFixed(5));
+
+    if(data.result > 20) {
+        dom.display.classList.add('green');
+        setTimeout(() => dom.display.classList.remove('green'), 1000);
+    } else {
+        dom.display.classList.add('orange');
+        setTimeout(() => dom.display.classList.remove('orange'), 1000);
+    }
 }
 
 const eraseLastChar = () => {

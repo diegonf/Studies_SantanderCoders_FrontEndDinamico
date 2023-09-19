@@ -21,34 +21,20 @@ const ops = {
 }
 
 const btnHandlers = {
-    'C': () => resetCalculator(),
-    '⇐': () => eraseLastChar(),
-    '=': () => calculateResult(),
-    '√x': (op) => handleOperation(op),
-    'x²': (op) => handleOperation(op),
-    '+': (op) => handleOperation(op),
-    '–': (op) => handleOperation(op),
-    '×': (op) => handleOperation(op),
-    '÷': (op) => handleOperation(op),
-    '.': (btn) => addCharToDisplay(btn),
-    '0': (btn) => addCharToDisplay(btn),
-    '1': (btn) => addCharToDisplay(btn),
-    '2': (btn) => addCharToDisplay(btn),
-    '3': (btn) => addCharToDisplay(btn),
-    '4': (btn) => addCharToDisplay(btn),
-    '5': (btn) => addCharToDisplay(btn),
-    '6': (btn) => addCharToDisplay(btn),
-    '7': (btn) => addCharToDisplay(btn),
-    '8': (btn) => addCharToDisplay(btn),
-    '9': (btn) => addCharToDisplay(btn),
+    'char': (btn) => addCharToDisplay(btn),
+    'operation': (op) => handleOperation(op),
+    'clear': () => resetCalculator(),
+    'equal': () => calculateResult(),
+    'backspace': () => eraseLastChar(),
 }
 
 const buttons = document.querySelectorAll('.btn');
 buttons.forEach(button => {
     button.addEventListener('click', function (event) {
         const btn = event.target.textContent;
+        const btnGroup = event.target.getAttribute('data-group');
 
-        btnHandlers[btn](btn);
+        btnHandlers[btnGroup](btn);
 
         printNumbers();
     });

@@ -1,4 +1,3 @@
-
 const data = {
     numOp: null,
     numDisplay: '0',
@@ -36,6 +35,7 @@ buttons.forEach(button => {
 
         btnHandlers[btnGroup](btn);
 
+        console.log(data);
         printNumbers();
     });
 });
@@ -88,6 +88,8 @@ const calculateResult = () => {
             result = +data.numOp + +data.numDisplay;
             break;
         case ops.minus:
+            console.log(+data.numOp)
+            console.log(+data.numDisplay)
             result = +data.numOp - data.numDisplay;
             break;
         case ops.x:
@@ -107,7 +109,7 @@ const calculateResult = () => {
             result = 'Error'
             break;
     }
-    data.result = result;
+    data.result = parseFloat(result.toFixed(5));
 }
 
 const eraseLastChar = () => {

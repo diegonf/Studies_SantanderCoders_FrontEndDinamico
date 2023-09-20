@@ -35,7 +35,6 @@ buttons.forEach(button => {
 
         btnHandlers[btnGroup](btn);
 
-        console.log(data);
         printNumbers();
     });
 });
@@ -77,7 +76,8 @@ const handleOperation = (op) => {
 const calculateResult = () => {
     if(data.result) return;
 
-    if (!data.numDisplay) return;
+    const invalidOp = !data.numDisplay || !data.op;
+    if (invalidOp) return;
 
     dom.operation.innerText = `${data.numOp} ${data.op} ${data.numDisplay} =`;
 
@@ -88,8 +88,6 @@ const calculateResult = () => {
             result = +data.numOp + +data.numDisplay;
             break;
         case ops.minus:
-            console.log(+data.numOp)
-            console.log(+data.numDisplay)
             result = +data.numOp - data.numDisplay;
             break;
         case ops.x:

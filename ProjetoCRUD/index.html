@@ -33,19 +33,19 @@
 
     <main class="max-sm:min-h-[calc(100vh-120px)] min-h-[calc(100vh-100px)] bg-gray-100">
 
-      <div id="loginPage" class="max-sm:h-[calc(100vh-120px)] h-[calc(100vh-100px)] bg-teal-300">
+      <div id="loginPage" class="max-sm:h-[calc(100vh-120px)] h-[calc(100vh-100px)] bg-teal-400">
         <section class="container mx-auto flex h-full justify-center max-md:gap-8 max-lg:gap-40 gap-72">
           <div class="flex justify-center items-center">
             <img src="./assets/login-imgs/dog-login.png" class="">
           </div>
           <div class="flex flex-col justify-center items-center gap-8">
             <h2 class="font-bold text-4xl w-full text-center">Faça seu Login</h2>
-            <div id="formContainer" class="rounded p border border-solid">
+            <div id="formContainer">
               <div id="formTabs" class="">
-                <a id="loginTab" class="inline-block py-2 px-5 cursor-pointer">Login</a>
-                <a id="registerTab" class="inline-block py-2 px-5 pointer cursor-pointer">Registrar</a>
+                <a id="loginTab" class="inline-block py-3 px-8 cursor-pointer font-bold rounded-t-xl">Login</a>
+                <a id="registerTab" class="inline-block py-3 px-8 pointer cursor-pointer font-bold rounded-t-xl">Registrar</a>
               </div>
-              <form id="loginForm" class="p-5 w-[30rem] bg-white">
+              <form id="loginForm" class="p-8 w-[35rem] bg-white rounded-b-xl">
                 <div class="mb-5 w-full">
                   <label for="email" class="block w-full">Email:</label>
                   <input type="email" name="email" id="email" placeholder="exemplo@email.com" class="p-3 rounded w-full">
@@ -58,7 +58,7 @@
                 </div>
                 <button id="btnLogin" class="bg-teal-800 text-white py-3 w-full rounded mt-10">Login</button>
               </form>
-              <form id="registerForm" class="p-5 w-[30rem] bg-white hidden">
+              <form id="registerForm" class="p-8 w-[35rem] bg-white rounded-b-xl hidden">
                 <div class="mb-5 w-full">
                   <label for="registerEmail" class="block w-full">Email:</label>
                   <input type="registerEmail" name="registerEmail" id="registerEmail" placeholder="exemplo@email.com" class="p-3 rounded w-full">

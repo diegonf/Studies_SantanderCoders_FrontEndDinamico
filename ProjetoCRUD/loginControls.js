@@ -42,7 +42,7 @@ const setShowRegisterPassword = () => {
 
 const setHideRegisterPassword = () => {
   wd.registerPass.type = 'password';
-  wd.registerPass.placeholder = '*******';
+  wd.registerPass.placeholder = '********';
   wd.registerOpenEye.classList.add('hidden');
   wd.regiserClosedEye.classList.remove('hidden');
 }

@@ -1,0 +1,27 @@
+.msg-alert{
+  color: red;
+}
+
+.container {
+  align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.elem {
+  align-items: center;
+  border: 1px solid gray;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.elem img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100px;
+}

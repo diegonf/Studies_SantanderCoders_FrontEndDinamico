@@ -88,8 +88,7 @@
         </section>
       </div>
 
-      <!-- <div id="homePage" class="hidden max-sm:min-h-[calc(100vh-120px)] min-h-[calc(100vh-100px)] bg-gray-100"> -->
-      <div id="homePage" class="hidden h-[200rem] bg-gray-100">
+      <div id="homePage" class="hidden max-sm:min-h-[calc(100vh-120px)] min-h-[calc(100vh-100px)] bg-gray-100">
         <section id="banner">
           <img src="./assets/home-imgs/dog-banner.jpg" alt="banner cachorro"
             class="max-sm:h-48 max-lg:h-80 max-2xl:h-96 h-[30rem] w-full object-cover">
@@ -108,39 +107,59 @@
             </div>
           </div>
 
-          <div id="formPopup" class="fixed left-0 right-0 top-0 h-screen">
+          <div id="formPopup" class="fixed left-0 right-0 top-0 h-screen hidden">
             <div id="formOverlay" class="w-full h-full bg-gray-500 bg-opacity-50 flex items-center justify-center">
-              <div id="formContainer" class="bg-white p-8 rounded-lg max-h-[95vh] max-w-[95vw] overflow-auto relative">
-                <button class="absolute right-3 top-3 text-4xl rotate-45 ">+</button>
+              <div id="formContainer" class="bg-white p-8 rounded-lg max-h-[95vh] max-w-[95vw] overflow-y-auto overflow-x-hidden relative">
+                <button id="btnCloseBreedForm" class="absolute right-3 top-1 text-4xl rotate-45 ">+</button>
                 <h1 class="font-bold mb-5 text-3xl text-center">Adicionar Nova Raça</h1>
 
                 <form id="newBreedForm">
-                  <div class="mb-4 flex">
-                    <label for="breedName" class="inline-block mr-3 flex items-center">Nome:</label>
-                    <input placeholder="Nome da raça" type="text" name="breedName" id="breedName" class="w-full border border-solid border-gray-300 rounded-lg p-2">
+                  <div class="mb-4">
+                    <div class="flex">
+                      <label for="breedName" class="inline-block mr-3 flex items-center">Nome:</label>
+                      <input placeholder="Nome da raça" type="text" name="breedName" id="breedName"
+                        class="w-full border border-solid border-gray-300 rounded-lg p-2">
+                    </div>
+                    <span id="breedNameSpan" class="text-red-600 text-2xl block"></span>
                   </div>
                   <div class="mb-4">
                     <div class="flex">
-                      <label for="breedImage" class="inline-block mr-3 flex items-center">Foto:</label>
-                      <input placeholder="Link da foto do cachorro" type="text" name="breedImage" id="breedImage" class="w-full border border-solid border-gray-300 rounded-lg p-2">
+                      <label for="breedImageLink" class="inline-block mr-3 flex items-center">Foto:</label>
+                      <input placeholder="Link da foto do cachorro" type="text" name="breedImageLink"
+                        id="breedImageLink" class="w-full border border-solid border-gray-300 rounded-lg p-2">
                     </div>
-                    <div class="h-52 max-sm:w-full w-[35rem] mt-2 bg-gray-100 rounded-lg border border-solid border-gray-300 flex justify-center items-center">
-                      <img src="./assets/img.svg" alt="icone de uma imagem/foto" class="opacity-30">
+                    <span id="breedImageLinkSpan" class="text-red-600 text-2xl block"></span>
+                    <div id="imgPreviewContainer"
+                      class="h-52 max-sm:w-full w-[40rem] mt-2 bg-gray-100 rounded-lg border border-solid border-gray-300 flex justify-center items-center">
+                      <img id="imgPreview" src="./assets/home-imgs/img-icon.svg" alt="icone de uma imagem/foto"
+                        class="opacity-30">
                     </div>
                   </div>
-                  <div class="mb-4 flex">
-                    <label for="breedCountry" class="inline-block mr-3 flex items-center whitespace-nowrap">País de Origem:</label>
-                    <select name="breedCountry" id="breedCountry" class="cursor-pointer w-full border border-solid border-gray-300 rounded-lg p-2">
-                      <option value="" disabled selected>Selecione um país</option>
-                    </select>
+                  <div class="mb-4">
+                    <div class="flex">
+                      <label for="breedCountry" class="inline-block mr-3 flex items-center whitespace-nowrap">País de
+                        Origem:</label>
+                      <select name="breedCountry" id="breedCountry"
+                        class="cursor-pointer w-full border border-solid border-gray-300 rounded-lg p-2">
+                        <option value="" disabled selected>Selecione um país</option>
+                      </select>
+                    </div>
+                    <span id="breedCountrySpan" class="text-red-600 text-2xl block"></span>
                   </div>
-                  <div class="mb-4 flex">
-                    <label for="breedYear" class="inline-block mr-3 flex items-center whitespace-nowrap">Ano de Origem:</label>
-                    <input type="number" name="breedYear" id="breedYear" placeholder="ex: 2023" class="cursor-pointer w-full border border-solid border-gray-300 rounded-lg p-2">
+                  <div class="mb-4">
+                    <div class="flex">
+                      <label for="breedYear" class="inline-block mr-3 flex items-center whitespace-nowrap">Ano de
+                        Origem:</label>
+                      <input type="number" name="breedYear" id="breedYear" placeholder="ex: 2023"
+                        class="cursor-pointer w-full border border-solid border-gray-300 rounded-lg p-2">
+                    </div>
+                    <span id="breedYearSpan" class="text-red-600 text-2xl block"></span>
                   </div>
                   <div class="mb-8">
                     <label for="breedDescription" class="block w-full">Descrição:</label>
-                    <textarea name="breedDescription" id="breedDescription" cols="30" rows="3" class="resize-none w-full border border-solid border-gray-300 rounded-lg p-2"></textarea>
+                    <textarea name="breedDescription" id="breedDescription" cols="30" rows="3"
+                      class="resize-none w-full border border-solid border-gray-300 rounded-lg p-2"></textarea>
+                    <span id="breedDescriptionSpan" class="text-red-600 text-2xl block"></span>
                   </div>
 
                   <button class="w-full bg-teal-300 p-3 rounded-lg">Registrar</button>

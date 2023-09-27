@@ -1,6 +1,7 @@
-import { loadLoginControls } from "./loginControls.js";
 import { loadUserLoggedinMenu } from "./userMenu.js";
 import { getCurrentUser } from "./services.js";
+import { breedFormInit } from "./home.js";
+import { userFormInit } from "./login.js";
 
 const wd = window;
 
@@ -13,11 +14,12 @@ export const updatePageDOM = () => {
     wd.homePage.classList.remove('hidden');
     wd.loginPage.classList.add('hidden');
     loadUserLoggedinMenu();
+    breedFormInit();
 
   } else {
     wd.homePage.classList.add('hidden');
     wd.loginPage.classList.remove('hidden');
-    loadLoginControls();
+    userFormInit();
   }
 }
 

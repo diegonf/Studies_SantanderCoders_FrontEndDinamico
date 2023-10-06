@@ -6,6 +6,7 @@
 - Publicação: https://diegonf.github.io/Project_SantanderCoders_CRUD/
 - Utilizado API do crudcrud: https://crudcrud.com/
   - Alterar URL do crudcrud no arquivo service.js para o site funcionar.
+  
 
 ## Requisitos do Projeto
 #### PRINCIPAL (1000XP)
